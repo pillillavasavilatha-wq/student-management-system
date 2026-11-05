@@ -1,35 +1,41 @@
+
 import java.util.ArrayList;
 
 public class StudentManager {
 
-    private ArrayList<Student> students = new ArrayList<>();
-
-    // Add student
-    public void addStudent(Student student) {
-        students.add(student);
-        System.out.println("Student added successfully!");
-    }
+    private StudentDAO dao = new StudentDAO();
 
     // Check duplicate ID
     public boolean studentIdExists(int id) {
+        return dao.studentIdExists(id);
+    }
 
-        for (Student student : students) {
+    // Add student
+    public void addStudent(Student student) {
 
-            if (student.getId() == id) {
-                return true;
-            }
+        if (dao.studentIdExists(student.getId())) {
+            System.out.println("Student ID already exists!");
+            return;
         }
 
-        return false;
+        if (dao.addStudent(student)) {
+            System.out.println("Student added successfully!");
+        } else {
+            System.out.println("Unable to add student.");
+        }
     }
 
     // View all students
     public void viewStudents() {
 
+        ArrayList<Student> students = dao.getAllStudents();
+
         if (students.isEmpty()) {
             System.out.println("No students found.");
             return;
         }
+
+        System.out.println("\n========== All Students ==========");
 
         for (Student student : students) {
             student.displayDetails();
@@ -39,52 +45,45 @@ public class StudentManager {
     // Search student
     public void searchStudent(int id) {
 
-        for (Student student : students) {
+        Student student = dao.searchStudent(id);
 
-            if (student.getId() == id) {
-                student.displayDetails();
-                return;
-            }
+        if (student != null) {
+            student.displayDetails();
+        } else {
+            System.out.println("Student not found!");
         }
-
-        System.out.println("Student not found!");
     }
 
     // Update student
     public void updateStudent(int id, String name, int age,
                               String course, double marks) {
 
-        for (Student student : students) {
+        Student student = dao.searchStudent(id);
 
-            if (student.getId() == id) {
-
-                student.setName(name);
-                student.setAge(age);
-                student.setCourse(course);
-                student.setMarks(marks);
-
-                System.out.println("Student updated successfully!");
-                return;
-            }
+        if (student == null) {
+            System.out.println("Student not found!");
+            return;
         }
 
-        System.out.println("Student not found!");
+        student.setName(name);
+        student.setAge(age);
+        student.setCourse(course);
+        student.setMarks(marks);
+
+        if (dao.updateStudent(student)) {
+            System.out.println("Student updated successfully!");
+        } else {
+            System.out.println("Unable to update student.");
+        }
     }
 
     // Delete student
     public void deleteStudent(int id) {
 
-        for (int i = 0; i < students.size(); i++) {
-
-            if (students.get(i).getId() == id) {
-
-                students.remove(i);
-
-                System.out.println("Student deleted successfully!");
-                return;
-            }
+        if (dao.deleteStudent(id)) {
+            System.out.println("Student deleted successfully!");
+        } else {
+            System.out.println("Student not found or deletion failed.");
         }
-
-        System.out.println("Student not found!");
     }
 }

@@ -1,40 +1,75 @@
 # Student Management System
 
-A console-based Student Management System built using Java and Object-Oriented Programming (OOP) concepts.
-
-## Features
-
-- Add Student
-- View Students
-- Search Student by ID
-- Update Student
-- Delete Student
-- Prevent duplicate Student IDs
-- Validate student age
-- Validate marks between 0 and 100
-- Validate name and course
-- Handle invalid user input
+## Project Overview
+The Student Management System is a Java-based desktop application designed to manage student information efficiently. It provides an admin login system and allows administrators to perform CRUD operations on student records using a MySQL database.
 
 ## Technologies Used
-
 - Java
-- OOP
-- ArrayList
-- Scanner
+- Java Swing (GUI)
+- JDBC
+- MySQL
 - IntelliJ IDEA
 
-## OOP Concepts
+## Features
+- Admin Login with database authentication
+- Password hashing using PBKDF2WithHmacSHA256
+- Add Student
+- View All Students
+- Search Student
+- Update Student Details
+- Delete Student
+- Dashboard Statistics
+- Student Performance Report
+- Grade Calculation
+- Pass/Fail Status
+- Export Reports to CSV
+- Logout
 
-- Classes and Objects
-- Encapsulation
-- Constructors
-- Methods
-- Getters and Setters
+## Database
+Database Name: `student_management`
+
+Tables:
+- `students` – stores student information
+- `admins` – stores admin usernames and password hashes
 
 ## Project Structure
-
 ```text
-src/
-├── Main.java
-├── Student.java
-└── StudentManager.java
+StudentManagementSystem/
+│
+├── src/
+│   ├── Student.java
+│   ├── DBConnection.java
+│   ├── StudentDAO.java
+│   ├── StudentManager.java
+│   ├── Main.java
+│   ├── StudentGUI.java
+│   ├── Login.java
+│   ├── PasswordUtil.java
+│   ├── AdminDAO.java
+│   └── AdminSetup.java
+│
+└── README.md
+```
+
+## How to Run the Project
+
+1. Install JDK 17 or later.
+2. Install MySQL.
+3. Create the `student_management` database.
+4. Create the `students` and `admins` tables.
+5. Configure your MySQL username and password in `DBConnection.java`.
+6. Add MySQL Connector/J to the project libraries.
+7. Run `AdminSetup.java` once to create the initial admin account.
+8. Run `Login.java` to launch the application.
+
+## Learning Outcomes
+- Understanding Java OOP concepts
+- Working with Java Swing
+- Database connectivity using JDBC
+- Performing CRUD operations
+- Using PreparedStatement for database queries
+- Implementing password hashing
+- Generating CSV reports
+
+## Author
+Final-year B.Tech Computer Science and Engineering student.

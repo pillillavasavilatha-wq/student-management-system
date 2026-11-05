@@ -1,3 +1,4 @@
+
 public class Student {
 
     private int id;
@@ -6,13 +7,16 @@ public class Student {
     private String course;
     private double marks;
 
-    public Student(int id, String name, int age, String course, double marks) {
+    public Student(int id, String name, int age,
+                   String course, double marks) {
+
         this.id = id;
         this.name = name;
         this.age = age;
         this.course = course;
         this.marks = marks;
     }
+
     public int getId() {
         return id;
     }
@@ -50,7 +54,7 @@ public class Student {
     }
 
     public void displayDetails() {
-        System.out.println("\n===== Student Details =====");
+
         System.out.println("Student ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
