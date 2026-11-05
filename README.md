@@ -26,11 +26,11 @@ The Student Management System is a Java-based desktop application designed to ma
 - Logout
 
 ## Database
-Database Name: `student_management`
+**Database Name:** `student_management`
 
-Tables:
-- `students` – stores student information
-- `admins` – stores admin usernames and password hashes
+**Tables:**
+- `students` – Stores student information.
+- `admins` – Stores admin usernames and password hashes.
 
 ## Project Structure
 ```text
@@ -48,8 +48,20 @@ StudentManagementSystem/
 │   ├── AdminDAO.java
 │   └── AdminSetup.java
 │
+├── screenshots/
+│   ├── login.png
+│   └── dashboard.png
+│
 └── README.md
 ```
+
+## Application Screenshots
+
+### Admin Login
+![Admin Login](screenshots/login.png)
+
+### Dashboard and Student Management
+![Dashboard](screenshots/dashboard.png)
 
 ## How to Run the Project
 
@@ -57,19 +69,22 @@ StudentManagementSystem/
 2. Install MySQL.
 3. Create the `student_management` database.
 4. Create the `students` and `admins` tables.
-5. Configure your MySQL username and password in `DBConnection.java`.
+5. Configure your MySQL username and password in the database configuration file.
 6. Add MySQL Connector/J to the project libraries.
 7. Run `AdminSetup.java` once to create the initial admin account.
 8. Run `Login.java` to launch the application.
 
 ## Learning Outcomes
-- Understanding Java OOP concepts
-- Working with Java Swing
-- Database connectivity using JDBC
-- Performing CRUD operations
-- Using PreparedStatement for database queries
-- Implementing password hashing
-- Generating CSV reports
+- Understanding Java OOP concepts.
+- Working with Java Swing GUI.
+- Database connectivity using JDBC.
+- Performing CRUD operations.
+- Using PreparedStatement for database queries.
+- Implementing password hashing.
+- Generating CSV reports.
 
 ## Author
-Final-year B.Tech Computer Science and Engineering student.
+**Pillilla Vasavilatha**
+
+Final-year B.Tech Computer Science and Engineering Student  
+Mohan Babu University, Tirupati
