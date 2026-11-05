@@ -58,10 +58,10 @@ StudentManagementSystem/
 ## Application Screenshots
 
 ### Admin Login
-![Admin Login](screenshots/login.png)
+[![Admin Login](login%20page.png)](login%20page.png)
 
-### Dashboard and Student Management
-![Dashboard](screenshots/dashboard.png)
+### Student Management Dashboard
+[![Student Management](student%20management.png)](student%20management.png)
 
 ## How to Run the Project
 
